@@ -27,10 +27,11 @@ namespace Game.Tutorial.Development
         [SerializeField]
         public bool isCompleted;
         
-        [ShowIf("isDebug")]
-        [HideIf("isCompleted")]
+        [ShowIf("ShowStep")]
         [SerializeField]
         public TutorialStep currentStep;
+
+        private bool ShowStep() => isDebug && !isCompleted;
     }
 }
 #endif
