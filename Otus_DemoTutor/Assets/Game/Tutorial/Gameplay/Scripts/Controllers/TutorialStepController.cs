@@ -1,3 +1,4 @@
+using System;
 using Game.Tutorial.App;
 using GameSystem;
 using UnityEngine;
@@ -32,6 +33,7 @@ namespace Game.Tutorial.Gameplay
 
         public virtual void StartGame()
         {
+            //Debug.Log($"[{this.name}]: [{this.step}] IsStepPassed[{this.tutorialManager.IsStepPassed(this.step)}] CurrentStep[{this.tutorialManager.CurrentStep}]");
             var stepFinished = this.tutorialManager.IsStepPassed(this.step);
             if (!stepFinished)
             {
@@ -57,27 +59,24 @@ namespace Game.Tutorial.Gameplay
 
         protected void NotifyAboutComplete()
         {
-            if (this.tutorialManager.CurrentStep == this.step)
-            {
-                this.tutorialManager.FinishCurrentStep();
-            }
+            if (this.tutorialManager.CurrentStep != this.step)
+                throw new NotSupportedException("[TutorialStepController]: TutorialStepController wrong step");
+            this.tutorialManager.FinishCurrentStep();
         }
 
         protected void NotifyAboutMoveNext()
         {
-            if (this.tutorialManager.CurrentStep == this.step)
-            {
-                this.tutorialManager.MoveToNextStep();
-            }
+            if (this.tutorialManager.CurrentStep != this.step)
+                throw new NotSupportedException("[TutorialStepController]: TutorialStepController wrong step");
+            this.tutorialManager.MoveToNextStep();
         }
 
         protected void NotifyAboutCompleteAndMoveNext()
         {
-            if (this.tutorialManager.CurrentStep == this.step)
-            {
-                this.tutorialManager.FinishCurrentStep();
-                this.tutorialManager.MoveToNextStep();
-            }
+            if (this.tutorialManager.CurrentStep != this.step)
+                throw new NotSupportedException("[TutorialStepController]: TutorialStepController wrong step");
+            this.tutorialManager.FinishCurrentStep();
+            this.tutorialManager.MoveToNextStep();
         }
 
         protected bool IsStepFinished()

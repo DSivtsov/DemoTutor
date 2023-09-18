@@ -7,8 +7,8 @@ using UnityEngine;
 
 namespace Game.Tutorial
 {
-    [AddComponentMenu("Tutorial/Step «Sell Resource»")]
-    public sealed class SellResourceStepController : TutorialStepController
+    [AddComponentMenu("Tutorial/Step «Put Resource To Conveyor»")]
+    public sealed class PutResourceToConveyorStepController : TutorialStepController
     {
         private PointerManager pointerManager;
 
@@ -16,13 +16,13 @@ namespace Game.Tutorial
 
         private ScreenTransform screenTransform;
     
-        private readonly SellResourceInspector actionInspector = new();
+        private readonly PutResourceToConveyorInspector actionInspector = new();
 
         [SerializeField]
-        private SellResourceConfig config;
+        private PutResourceToConveyorConfig config;
 
         [SerializeField]
-        private SellResourcePanelShower actionPanel = new();
+        private TutorialStepPanelShower actionPanel = new();
 
         [SerializeField]
         private Transform pointerTransform;
@@ -42,7 +42,8 @@ namespace Game.Tutorial
 
         protected override void OnStart()
         {
-            TutorialAnalytics.LogEventAndCache("tutorial_step_3__cell_resource_started");
+            //TutorialAnalytics.LogEventAndCache("tutorial_step_3__cell_resource_started");
+            base.OnStart();
             this.actionInspector.Inspect(this.NotifyAboutCompleteAndMoveNext);
 
             var targetPosition = this.pointerTransform.position;
@@ -53,7 +54,8 @@ namespace Game.Tutorial
 
         protected override void OnStop()
         {
-            TutorialAnalytics.LogEventAndCache("tutorial_step_3__cell_resource_completed");
+            //TutorialAnalytics.LogEventAndCache("tutorial_step_3__cell_resource_completed");
+            base.OnStop();
             this.navigationManager.Stop();
             this.pointerManager.HidePointer();
             this.actionPanel.Hide();

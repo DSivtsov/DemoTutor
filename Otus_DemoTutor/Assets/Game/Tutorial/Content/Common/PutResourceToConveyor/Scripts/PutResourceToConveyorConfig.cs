@@ -5,23 +5,23 @@ using UnityEngine;
 namespace Game.Tutorial
 {
     [CreateAssetMenu(
-        fileName = "Config «Harvest Resource»",
-        menuName = "Tutorial/New Config «Harvest Resource»"
+        fileName = "Tutorial Step «Put Resource To Conveyor»",
+        menuName = "Tutorial/New Tutorial Step «Put Resource To Conveyor»"
     )]
-    public sealed class HarvestResourceConfig : ScriptableObject, IPanelConfig
+    public sealed class PutResourceToConveyorConfig : ScriptableObject, IPanelConfig
     {
         [Header("Quest")]
         [SerializeField]
-        public ResourceType targetResourceType = ResourceType.STONE;
+        public ResourceType targetResourceType = ResourceType.WOOD;
     
         [Header("Meta")]
         [TranslationKey]
         [SerializeField]
-        public string title = "CUT TREE";
+        public string title = "Put Resource To Conveyor";
 
         [SerializeField]
         public Sprite icon;
-
+        
         string IPanelConfig.Title => title;
 
         Sprite IPanelConfig.Icon => icon;

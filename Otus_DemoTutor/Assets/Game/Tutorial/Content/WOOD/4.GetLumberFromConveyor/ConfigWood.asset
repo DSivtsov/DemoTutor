@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f73a8de52be40e6a659d478d6259aa0, type: 3}
+  m_Script: {fileID: 11500000, guid: 2908857c3f0641deaf4295c36a1309c8, type: 3}
   m_Name: ConfigWood
   m_EditorClassIdentifier: 
-  targetResourceType: 0
-  title: Tutorial|GATHER_WOOD
-  icon: {fileID: 21300000, guid: b58cbbbf2f7cb4cf7a676c2ea467803e, type: 3}
+  targetResourceType: 2
+  title: Tutorial|GET_LUMBER_FROM_CONVEYOR
+  icon: {fileID: 21300000, guid: 4c72251e5fc59480c9940015c2bfa7aa, type: 3}

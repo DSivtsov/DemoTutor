@@ -295,10 +295,10 @@ MonoBehaviour:
         - language: 30
           value: "\u041F\u041E\u041B\u041E\u0416\u0418\u0422\u0415 \u0414\u0415\u0420\u0415\u0412\u041E
             \u041D\u0410 \u041A\u041E\u041D\u0412\u0415\u0419\u0415\u0420"
-      - key: GET_PLANK_FROM_CONVEYOR
+      - key: GET_LUMBER_FROM_CONVEYOR
         translations:
         - language: 10
-          value: GET PLANKS FROM CONVEYOR
+          value: GET LUMBER FROM CONVEYOR
         - language: 30
           value: "\u0417\u0410\u0411\u0415\u0420\u0418\u0422\u0415 \u0414\u041E\u0421\u041A\u0418
             \u0421 \u041A\u041E\u041D\u0412\u0415\u0419\u0415\u0420\u0410"

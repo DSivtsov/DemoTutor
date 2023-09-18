@@ -139,7 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   step: 1
   config: {fileID: 11400000, guid: fd165a30bf057c64b84b40ce26d015dc, type: 2}
-  panelShower:
+  tutorialStepPanelShower:
     showDelay: 0.5
     viewPrefab: {fileID: 7004754039173447821, guid: ec0a3f3dd5a8e46c68f98d15568a6457,
       type: 3}
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 3631100122495761853}
   - component: {fileID: 4911381372348552171}
   m_Layer: 0
-  m_Name: 3.SellResources
+  m_Name: 13.SellResources
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -174,7 +174,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3148927194187487716}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4911381372348552171
 MonoBehaviour:
@@ -355,6 +355,7 @@ MonoBehaviour:
   - {fileID: 8191445035365891073}
   - {fileID: 4693716560327999602}
   - {fileID: 857856321720598767}
+  - {fileID: 7030719114740448286}
   - {fileID: 4911381372348552171}
   - {fileID: 2426757044515287115}
   - {fileID: 7165680554008715135}
@@ -388,6 +389,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2435874646546107567}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3867535700236814193
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6615507807965251315}
+  m_Layer: 0
+  m_Name: PutWoodToConveyor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6615507807965251315
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3867535700236814193}
+  m_LocalRotation: {x: -0.23941702, y: 0.018044021, z: -0.0045032892, w: -0.97073877}
+  m_LocalPosition: {x: 34.798, y: 1.5, z: 7.145}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2435874646546107567}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4257378992284525787
 GameObject:
@@ -452,7 +484,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3148927194187487716}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8191445035365891073
 MonoBehaviour:
@@ -526,6 +558,57 @@ MonoBehaviour:
       m_SubObjectType: 
       m_EditorAssetChanged: 0
     showPopupDelay: 0.5
+--- !u!1 &5729077384687526116
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3505543212947105213}
+  - component: {fileID: 7030719114740448286}
+  m_Layer: 0
+  m_Name: 3.PutReourcesToConveyor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3505543212947105213
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5729077384687526116}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3148927194187487716}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7030719114740448286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5729077384687526116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29a0db683ab8438e832e5c2238ca0015, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  step: 5
+  config: {fileID: 11400000, guid: 79f27b6ca5071bb43bf2b238f191bdcd, type: 2}
+  actionPanel:
+    showDelay: 0.5
+    viewPrefab: {fileID: 7004754039173447821, guid: ec0a3f3dd5a8e46c68f98d15568a6457,
+      type: 3}
+  pointerTransform: {fileID: 6615507807965251315}
 --- !u!1 &5774641300251117817
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,7 +620,7 @@ GameObject:
   - component: {fileID: 546143346056862684}
   - component: {fileID: 2426757044515287115}
   m_Layer: 0
-  m_Name: 4.UpgradeHero
+  m_Name: 14.UpgradeHero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -556,7 +639,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3148927194187487716}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2426757044515287115
 MonoBehaviour:
@@ -583,6 +666,37 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
+--- !u!1 &5951010977025786776
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1149590253714969901}
+  m_Layer: 0
+  m_Name: GetPlanksFromConveyor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1149590253714969901
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5951010977025786776}
+  m_LocalRotation: {x: -0.23941702, y: 0.018044021, z: -0.0045032892, w: -0.97073877}
+  m_LocalPosition: {x: 30.41, y: 0, z: 7.145}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2435874646546107567}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6648382227896346770
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,7 +739,7 @@ GameObject:
   - component: {fileID: 5861923413027745657}
   - component: {fileID: 7165680554008715135}
   m_Layer: 0
-  m_Name: 5.DestroyEnemy
+  m_Name: 15.DestroyEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -644,7 +758,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3148927194187487716}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7165680554008715135
 MonoBehaviour:
@@ -706,6 +820,8 @@ Transform:
   - {fileID: 9212810819539266258}
   - {fileID: 1642970014}
   - {fileID: 5764988660148368229}
+  - {fileID: 6615507807965251315}
+  - {fileID: 1149590253714969901}
   m_Father: {fileID: 1558592513771340664}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -739,6 +855,7 @@ Transform:
   m_Children:
   - {fileID: 8651994101469306502}
   - {fileID: 4449728116692917961}
+  - {fileID: 3505543212947105213}
   - {fileID: 3631100122495761853}
   - {fileID: 546143346056862684}
   - {fileID: 5861923413027745657}

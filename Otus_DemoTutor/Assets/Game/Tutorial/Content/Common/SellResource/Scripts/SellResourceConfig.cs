@@ -8,7 +8,7 @@ namespace Game.Tutorial
         fileName = "Tutorial Step «Sell Resource»",
         menuName = "Tutorial/New Tutorial Step «Sell Resource»"
     )]
-    public sealed class SellResourceConfig : ScriptableObject
+    public sealed class SellResourceConfig : ScriptableObject, IPanelConfig
     {
         [Header("Quest")]
         [SerializeField]
@@ -21,5 +21,9 @@ namespace Game.Tutorial
 
         [SerializeField]
         public Sprite icon;
+        
+        string IPanelConfig.Title => title;
+
+        Sprite IPanelConfig.Icon => icon;
     }
 }

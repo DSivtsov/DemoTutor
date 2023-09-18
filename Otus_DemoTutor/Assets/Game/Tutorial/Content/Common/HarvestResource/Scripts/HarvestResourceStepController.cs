@@ -21,9 +21,13 @@ namespace Game.Tutorial
         [SerializeField]
         private HarvestResourceConfig config;
 
-        [SerializeField]
-        private HarvestResourcePanelShower panelShower = new();
+        // [SerializeField]
+        // private HarvestResourcePanelShower panelShower = new();
 
+        
+        [SerializeField]
+        private TutorialStepPanelShower tutorialStepPanelShower = new();
+        
         [SerializeField]
         private Transform pointerTransform;
 
@@ -35,7 +39,8 @@ namespace Game.Tutorial
 
             var heroService = context.GetService<IHeroService>();
             this.inspector.Construct(heroService, this.config);
-            this.panelShower.Construct(this.config);
+            //this.panelShower.Construct(this.config);
+            this.tutorialStepPanelShower.Construct(this.config);
 
             base.ConstructGame(context);
         }
@@ -49,14 +54,16 @@ namespace Game.Tutorial
             var position = this.pointerTransform.position;
             this.pointerManager.ShowPointer(position, this.pointerTransform.rotation);
             this.navigationManager.StartLookAt(position);
-            this.panelShower.Show(this.screenTransform.Value);
+            //this.panelShower.Show(this.screenTransform.Value);
+            this.tutorialStepPanelShower.Show(this.screenTransform.Value);
         }
 
         protected override void OnStop()
         {
             base.OnStop();
             this.navigationManager.Stop();
-            this.panelShower.Hide();
+            //this.panelShower.Hide();
+            this.tutorialStepPanelShower.Hide();
             this.pointerManager.HidePointer();
         }
     }
