@@ -6,7 +6,8 @@ namespace Game.Tutorial.App
 {
     public sealed class TutorialAssetSupplier
     {
-        private const string ENGINE_KEY = "TutorialEngine";
+        //private const string ENGINE_KEY = "TutorialEngine";
+        private const string ENGINE_KEY = "TutorialEngineStone";
 
         private const string INTERFACE_KEY = "TutorialInterface";
 

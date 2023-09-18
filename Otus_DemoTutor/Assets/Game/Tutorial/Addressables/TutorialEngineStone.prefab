@@ -300,7 +300,7 @@ GameObject:
   - component: {fileID: 1558592514180572895}
   - component: {fileID: 3446013540444153076}
   m_Layer: 0
-  m_Name: TutorialEngine
+  m_Name: TutorialEngineStone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

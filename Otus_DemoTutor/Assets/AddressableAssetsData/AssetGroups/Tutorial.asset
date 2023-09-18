@@ -18,7 +18,7 @@ MonoBehaviour:
   m_GUID: 05a2fbfd4888c431f8c7235377315933
   m_SerializeEntries:
   - m_GUID: 3ad06230062534ad3bf704b8ae751f1d
-    m_Address: TutorialEngine
+    m_Address: TutorialEngineStone
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 726222fd95a2042488555d01ab426b44
@@ -26,19 +26,19 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 646f4734a23da42f093401cb3ad4c066
-    m_Address: Assets/Game/Tutorial/Content/1.Welcome/PopupWelcome.prefab
+    m_Address: StonePopupWelcome1
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 7d4d3e75ef3a84db3a465d10874d8329
-    m_Address: Assets/Game/Tutorial/Content/4.UpgradeHero/PopupHeroUpgrades.prefab
+    m_Address: StoneUpgradeHero4
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 64b782892352d45a1b8bba500bb0385e
-    m_Address: Assets/Game/Tutorial/Content/5.KillEnemy/Enemy.prefab
+    m_Address: StoneKillEnemy5
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 9a39ce8ef6db649089bae8e5570d8177
-    m_Address: Assets/Game/Tutorial/Content/Congratulations/PopupCongratulations.prefab
+    m_Address: StonePopupCongratulations
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: ec0a3f3dd5a8e46c68f98d15568a6457
