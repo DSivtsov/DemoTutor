@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59f1d9911c5a4e0abd4429f8d92f443e, type: 3}
-  m_Name: TutorialStepConfig
+  m_Name: TutorialStepConfigWood
   m_EditorClassIdentifier: 
-  steps: 0000000001000000020000000300000004000000
+  steps: 0000000001000000050000000600000002000000030000000400000007000000

@@ -11,6 +11,8 @@ namespace Game.Tutorial
     public sealed class HarvestResourceStepController : TutorialStepController
     {
         private PointerManager pointerManager;
+        
+        private NavigationManager navigationManager;
 
         private ScreenTransform screenTransform;
         
@@ -28,6 +30,7 @@ namespace Game.Tutorial
         public override void ConstructGame(GameContext context)
         {
             this.pointerManager = context.GetService<PointerManager>();
+            this.navigationManager = context.GetService<NavigationManager>();
             this.screenTransform = context.GetService<ScreenTransform>();
 
             var heroService = context.GetService<IHeroService>();
@@ -37,17 +40,22 @@ namespace Game.Tutorial
             base.ConstructGame(context);
         }
 
+        protected override string DescriptionForTutorialAnalytics => config.title;
+        
         protected override void OnStart()
         {
-            TutorialAnalytics.LogEventAndCache("tutorial_step_2__harvest_resource_started");
+            base.OnStart();
             this.inspector.Inspect(callback: this.NotifyAboutCompleteAndMoveNext);
-            this.pointerManager.ShowPointer(this.pointerTransform.position, this.pointerTransform.rotation);
+            var position = this.pointerTransform.position;
+            this.pointerManager.ShowPointer(position, this.pointerTransform.rotation);
+            this.navigationManager.StartLookAt(position);
             this.panelShower.Show(this.screenTransform.Value);
         }
 
         protected override void OnStop()
         {
-            TutorialAnalytics.LogEventAndCache("tutorial_step_2__harvest_resource_completed");
+            base.OnStop();
+            this.navigationManager.Stop();
             this.panelShower.Hide();
             this.pointerManager.HidePointer();
         }

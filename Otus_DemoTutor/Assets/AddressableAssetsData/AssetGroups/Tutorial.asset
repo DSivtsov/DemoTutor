@@ -57,6 +57,10 @@ MonoBehaviour:
     m_Address: Assets/Game/Tutorial/Gameplay/Prefabs/PointerArrow.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 7b3a5245172e44b42890fa42f4f30084
+    m_Address: TutorialEngineWood
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: b9a595f24937c4006b7d9469b06533f1, type: 2}
   m_SchemaSet:

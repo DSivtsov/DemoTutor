@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59f1d9911c5a4e0abd4429f8d92f443e, type: 3}
-  m_Name: TutorialStepConfig2HW
+  m_Script: {fileID: 11500000, guid: 0502d7dd2829497a933a3b2d65aa09e9, type: 3}
+  m_Name: ConfigWood
   m_EditorClassIdentifier: 
-  steps: 0000000001000000020000000300000004000000
+  title: Tutorial|WELCOME
+  description: Tutorial|INTRO_WOOD

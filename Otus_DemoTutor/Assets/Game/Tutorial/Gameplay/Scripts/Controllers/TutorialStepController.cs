@@ -1,3 +1,4 @@
+using Game.Tutorial.App;
 using GameSystem;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -21,6 +22,8 @@ namespace Game.Tutorial.Gameplay
             this.tutorialManager = TutorialManager.Instance;
         }
 
+        protected virtual string DescriptionForTutorialAnalytics => step.ToString();
+        
         public virtual void ReadyGame()
         {
             this.tutorialManager.OnStepFinished += this.CheckForFinish;
@@ -44,10 +47,12 @@ namespace Game.Tutorial.Gameplay
 
         protected virtual void OnStart()
         {
+            TutorialAnalytics.LogEventAndCache($"{GetBodyLogMsg}_started");
         }
 
         protected virtual void OnStop()
         {
+            TutorialAnalytics.LogEventAndCache($"{GetBodyLogMsg}_completed");
         }
 
         protected void NotifyAboutComplete()
@@ -95,5 +100,9 @@ namespace Game.Tutorial.Gameplay
                 this.OnStart();
             }
         }
+
+        public string GetCurrentNumStep() => $"{this.tutorialManager.CurrentIndex + 1}";
+        
+        private string GetBodyLogMsg => $"tutorial_step_{this.GetCurrentNumStep()}__{this.DescriptionForTutorialAnalytics}";
     }
 }

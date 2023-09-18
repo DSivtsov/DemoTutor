@@ -17,7 +17,7 @@ namespace Game.Tutorial.Development
                 return;
             }
 
-            var assetSuppier = ServiceLocator.GetService<TutorialAssetSupplier>();
+            var assetSuppier = ServiceLocator.GetService<TutorialAssetSupplierWood>();
             var stepList = assetSuppier.LoadStepList();
 
             var isCompleted = debugConfig.isCompleted;

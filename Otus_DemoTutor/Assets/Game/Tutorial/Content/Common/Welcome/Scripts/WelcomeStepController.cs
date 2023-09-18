@@ -23,15 +23,17 @@ namespace Game.Tutorial
             this.popupShower.Construct(popupManager, this.config);
         }
         
+        protected override string DescriptionForTutorialAnalytics => config.description;
+        
         protected override void OnStart()
         {
-            TutorialAnalytics.LogEventAndCache("tutorial_step_1__welcome_started");
+            base.OnStart();
             this.popupShower.ShowPopup(this.OnPopupClicked);
         }
 
         private void OnPopupClicked()
         {
-            TutorialAnalytics.LogEventAndCache("tutorial_step_1__welcome_completed");
+            base.OnStop();
             this.NotifyAboutCompleteAndMoveNext();
         }
     }

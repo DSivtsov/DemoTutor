@@ -11,13 +11,13 @@ namespace Game.Tutorial.App
     {
         private const string ENGINE_NAME = "Tutorial";
 
-        private TutorialAssetSupplier assetSupplier;
+        private TutorialAssetSupplierWood assetSupplier;
 
         private GameFacade gameFacade;
 
         void IAppInitListener.Init()
         {
-            this.assetSupplier = ServiceLocator.GetService<TutorialAssetSupplier>();
+            this.assetSupplier = ServiceLocator.GetService<TutorialAssetSupplierWood>();
             this.gameFacade = ServiceLocator.GetService<GameFacade>();
         }
 

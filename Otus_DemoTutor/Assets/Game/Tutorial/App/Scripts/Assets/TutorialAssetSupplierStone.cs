@@ -4,9 +4,8 @@ using UnityEngine.AddressableAssets;
 
 namespace Game.Tutorial.App
 {
-    public sealed class TutorialAssetSupplier
+    public sealed class TutorialAssetSupplierStone
     {
-        //private const string ENGINE_KEY = "TutorialEngine";
         private const string ENGINE_KEY = "TutorialEngineStone";
 
         private const string INTERFACE_KEY = "TutorialInterface";

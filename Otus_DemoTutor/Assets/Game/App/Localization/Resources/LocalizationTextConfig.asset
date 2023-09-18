@@ -210,7 +210,7 @@ MonoBehaviour:
           value: WELCOME
         - language: 30
           value: "\u041F\u0420\u0418\u0412\u0415\u0422\u0421\u0422\u0412\u0423\u0415\u041C"
-      - key: INTRO
+      - key: INTRO_STONE
         translations:
         - language: 10
           value: WELCOME TO THE AWERSOME GAME! HERE YOU CAN BECOME THE BEST KING
@@ -272,3 +272,56 @@ MonoBehaviour:
             \u0422\u0415\u041F\u0415\u0420\u042C \u0412\u042B \u041C\u041E\u0416\u0415\u0422\u0415
             \u041E\u0422\u041F\u0420\u0410\u0412\u0418\u0422\u042C\u0421\u042F \u0412
             \u0421\u0412\u041E\u0411\u041E\u0414\u041D\u041E\u0415 \u041F\u041B\u0410\u0412\u0410\u041D\u0418\u0415"
+      - key: INTRO_WOOD
+        translations:
+        - language: 10
+          value: TODAY WE WILL LEARN TO USE THE CONVEYOR AND RECEIVE REWARDS FOR
+            QUESTS
+        - language: 30
+          value: "\u0421\u0415\u0413\u041E\u0414\u041D\u042F \u041C\u042B \u041D\u0410\u0423\u0427\u0418\u041C\u0421\u042F
+            \u041F\u041E\u041B\u042C\u0417\u041E\u0412\u0410\u0422\u042C\u0421\u042F
+            \u041A\u041E\u041D\u0412\u0415\u0419\u0415\u0420\u041E\u041C \u0418 \u041F\u041E\u041B\u0423\u0427\u0410\u0422\u042C
+            \u041D\u0410\u0413\u0420\u0410\u0414\u042B \u0417\u0410 \u041A\u0412\u0415\u0421\u0422\u042B"
+      - key: GATHER_WOOD
+        translations:
+        - language: 10
+          value: GATHER WOOD
+        - language: 30
+          value: "\u0414\u041E\u0411\u042B\u0422\u042C \u0414\u0415\u0420\u0415\u0412\u041E"
+      - key: PUT_WOOD_TO_CONVEYOR
+        translations:
+        - language: 10
+          value: PUT WOOD TO CONVEYOR
+        - language: 30
+          value: "\u041F\u041E\u041B\u041E\u0416\u0418\u0422\u0415 \u0414\u0415\u0420\u0415\u0412\u041E
+            \u041D\u0410 \u041A\u041E\u041D\u0412\u0415\u0419\u0415\u0420"
+      - key: GET_PLANK_FROM_CONVEYOR
+        translations:
+        - language: 10
+          value: GET PLANKS FROM CONVEYOR
+        - language: 30
+          value: "\u0417\u0410\u0411\u0415\u0420\u0418\u0422\u0415 \u0414\u041E\u0421\u041A\u0418
+            \u0421 \u041A\u041E\u041D\u0412\u0415\u0419\u0415\u0420\u0410"
+      - key: SELL_PLANKS
+        translations:
+        - language: 10
+          value: SELL PLANKS
+        - language: 30
+          value: "\u041F\u0420\u041E\u0414\u0410\u0419\u0422\u0415 \u0414\u041E\u0421\u041A\u0418"
+      - key: GET_REWARDS
+        translations:
+        - language: 10
+          value: GET REWARDS
+        - language: 30
+          value: "\u041F\u041E\u041B\u0423\u0427\u0418\u0422\u0415 \u041D\u0410\u0413\u0420\u0410\u0414\u0423"
+      - key: EPILOGUE_WOOD
+        translations:
+        - language: 10
+          value: YOU HAVE COMPLETED THE SECOND STAGE OF TRAINING! YOU ARE NOW COMPLETELY
+            PREPARED TO LIVE IN OUR WORLD
+        - language: 30
+          value: "\u0412\u042B \u0417\u0410\u041A\u041E\u041D\u0427\u0418\u041B\u0418
+            \u0412\u0422\u041E\u0420\u041E\u0419 \u042D\u0422\u0410\u041F \u041E\u0411\u0423\u0427\u0415\u041D\u0418\u042F!
+            \u0422\u0415\u041F\u0415\u0420\u042C \u0412\u042B \u041F\u041E\u041B\u041D\u041E\u0421\u0422\u042C\u042E
+            \u0413\u041E\u0422\u041E\u0412\u042B \u041A \u0421\u0410\u041C\u041E\u0421\u0422\u041E\u042F\u0422\u0415\u041B\u042C\u041D\u041E
+            \u0416\u0418\u0417\u041D\u0418"

@@ -7,5 +7,8 @@ namespace Game.Tutorial
         SELL_RESOURCE = 2,
         UPGRADE_HERO = 3,
         DESTROY_ENEMY = 4,
+        PUT_TO_CONVEYOR = 5,
+        GET_FROM_CONVEYOR = 6,
+        GET_REWARDS = 7,
     }
 }

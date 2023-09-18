@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85f62eb6a3254f4a952544068035af20, type: 3}
-  m_Name: Services (Tutorial)
+  m_Name: Services (TutoriaStone)
   m_EditorClassIdentifier: 
   editorMode: 1
   releaseScripts:
