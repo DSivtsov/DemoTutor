@@ -18,15 +18,15 @@ MonoBehaviour:
   m_GUID: 05a2fbfd4888c431f8c7235377315933
   m_SerializeEntries:
   - m_GUID: 3ad06230062534ad3bf704b8ae751f1d
-    m_Address: TutorialEngineStone
+    m_Address: StoneTutorialEngine
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 726222fd95a2042488555d01ab426b44
-    m_Address: TutorialInterface
+    m_Address: CommonTutorialInterface
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 646f4734a23da42f093401cb3ad4c066
-    m_Address: StonePopupWelcome1
+    m_Address: CommonPopupWelcome
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 7d4d3e75ef3a84db3a465d10874d8329
@@ -58,7 +58,15 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 7b3a5245172e44b42890fa42f4f30084
-    m_Address: TutorialEngineWood
+    m_Address: WoodTutorialEngine
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6f4ef5727a95b0142b49eeebd7a2f602
+    m_Address: WoodPopupHeroUpgrades
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 915c93f4aaa1d1c44abc8be64dacb084
+    m_Address: WoodEnemy
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

@@ -20,7 +20,7 @@ namespace Game.Tutorial
         private KillEnemyManager enemyManager;
 
         [SerializeField]
-        private KillEnemyPanelShower panelShower;
+        private TutorialStepPanelShower panelShower;
 
         public override void ConstructGame(GameContext context)
         {

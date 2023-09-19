@@ -50,6 +50,7 @@ namespace Game.Tutorial
 
         private void InitUpgrades()
         {
+            Debug.LogWarning($"[UpgradeListPresenter]:  use separated config {this.config.name}");
             var targetId = this.config.upgradeConfig.id;
             var targetUprade = this.upgradesManager.GetUpgrade(targetId);
             this.CreatePresenter(targetUprade, this.targetView);

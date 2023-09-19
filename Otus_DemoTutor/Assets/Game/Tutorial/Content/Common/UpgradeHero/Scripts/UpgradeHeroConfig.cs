@@ -9,7 +9,7 @@ namespace Game.Tutorial
         fileName = "Config «Upgrade Hero»",
         menuName = "Tutorial/Config «Upgrade Hero»"
     )]
-    public sealed class UpgradeHeroConfig : ScriptableObject
+    public sealed class UpgradeHeroConfig : ScriptableObject, IPanelConfig
     {
         [Header("Quest")]
         [SerializeField]
@@ -31,5 +31,9 @@ namespace Game.Tutorial
 
         [SerializeField]
         public Sprite icon;
+
+        string IPanelConfig.Title => title;
+
+        Sprite IPanelConfig.Icon => icon;
     }
 }

@@ -7,7 +7,7 @@ namespace Game.Tutorial
         fileName = "Config «Kill Enemy»",
         menuName = "Tutorial/New Config «Kill Enemy»"
     )]
-    public sealed class KillEnemyConfig : ScriptableObject
+    public sealed class KillEnemyConfig : ScriptableObject, IPanelConfig
     {
         [Header("Meta")]
         [TranslationKey]
@@ -16,5 +16,9 @@ namespace Game.Tutorial
 
         [SerializeField]
         public Sprite icon;
+
+        string IPanelConfig.Title => title;
+
+        Sprite IPanelConfig.Icon => icon;
     }
 }

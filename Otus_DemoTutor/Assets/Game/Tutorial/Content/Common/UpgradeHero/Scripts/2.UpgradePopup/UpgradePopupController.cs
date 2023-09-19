@@ -37,6 +37,7 @@ namespace Game.Tutorial
         public override void ConstructGame(GameContext context)
         {
             var upgradesManager = context.GetService<UpgradesManager>();
+            Debug.LogWarning($"[UpgradePopupController]:  use separated config {this.config.name}");
             this.questInspector.Construct(upgradesManager, this.config);
 
             base.ConstructGame(context);

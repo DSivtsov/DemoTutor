@@ -6,9 +6,9 @@ namespace Game.Tutorial.App
 {
     public sealed class TutorialAssetSupplierWood
     {
-        private const string ENGINE_KEY = "TutorialEngineWood";
+        private const string ENGINE_KEY = "WoodTutorialEngine";
 
-        private const string INTERFACE_KEY = "TutorialInterface";
+        private const string INTERFACE_KEY = "CommonTutorialInterface";
 
         private const string STEP_CONFIG_PATH = "TutorialStepConfigWood";
 

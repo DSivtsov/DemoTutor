@@ -21,9 +21,9 @@ namespace Game.Tutorial
 
         [SerializeField]
         private UpgradeHeroConfig config;
-
+        
         [SerializeField]
-        private MoveToUpgradePanelShower actionPanel;
+        private TutorialStepPanelShower actionTutorialPanel;
 
         [SerializeField]
         private Transform pointerTransform;
@@ -40,7 +40,7 @@ namespace Game.Tutorial
 
             var worldPlaceVisitor = context.GetService<WorldPlaceVisitInteractor>();
             this.actionInspector.Construct(worldPlaceVisitor, this.config);
-            this.actionPanel.Construct(this.config);
+            this.actionTutorialPanel.Construct(this.config);
 
             var popupManager = context.GetService<PopupManager>();
             this.popupShower.Construct(popupManager);
@@ -59,6 +59,9 @@ namespace Game.Tutorial
 
         protected override void OnStart()
         {
+            //Was missed
+            base.OnStart();
+            
             //Подписываемся на подход к месту:
             this.actionInspector.Inspect(this.OnPlaceVisited);
 
@@ -68,7 +71,7 @@ namespace Game.Tutorial
             this.navigationManager.StartLookAt(targetPosition);
 
             //Показываем квест в UI:
-            this.actionPanel.Show(this.screenTransform.Value);
+            this.actionTutorialPanel.Show(this.screenTransform.Value);
         }
 
         private void OnPlaceVisited()
@@ -78,7 +81,7 @@ namespace Game.Tutorial
             this.navigationManager.Stop();
 
             //Убираем квест из UI:
-            this.actionPanel.Hide();
+            this.actionTutorialPanel.Hide();
 
             //Показываем попап:
             this.popupShower.ShowPopup();
