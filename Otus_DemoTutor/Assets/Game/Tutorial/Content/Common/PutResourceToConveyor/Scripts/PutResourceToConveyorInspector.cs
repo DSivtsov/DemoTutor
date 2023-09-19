@@ -1,5 +1,9 @@
 using System;
+using Entities;
+using Game.GameEngine.GameResources;
+using Game.Gameplay;
 using Game.Gameplay.Player;
+using UnityEngine;
 
 namespace Game.Tutorial
 {
@@ -7,33 +11,49 @@ namespace Game.Tutorial
     {
         private PutResourceToConveyorConfig config;
 
-        private VendorInteractor sellInteractor;
+        private ConveyorVisitInteractor conveyorVisitInteractor;
 
         private Action callback;
+        private IComponent_LoadZone loadZone;
 
-        public void Construct(VendorInteractor sellInteractor, PutResourceToConveyorConfig config)
+        public void Construct(ConveyorVisitInteractor conveyorVisitInteractor, PutResourceToConveyorConfig config)
         {
-            this.sellInteractor = sellInteractor;
+            this.conveyorVisitInteractor = conveyorVisitInteractor;
             this.config = config;
         }
 
         public void Inspect(Action callback)
         {
             this.callback = callback;
-            this.sellInteractor.OnResourcesSold += this.OnResourcesSold;
+            this.conveyorVisitInteractor.InputZone.OnEntered += InputZoneOnOnEntered;
         }
 
-        private void OnResourcesSold(VendorSellResult result)
+        private void InputZoneOnOnEntered(IEntity entity)
         {
-            if (result.resourceType == this.config.targetResourceType)
+            this.loadZone = entity?.Get<IComponent_LoadZone>();
+            if (loadZone != null)
             {
+                //Debug.Log($"[PutResourceToConveyorInspector]: InputZoneOnOnEntered() entity.Get<IComponent_LoadZone>()[{loadZone}]");
+                this.loadZone.OnAmountChanged += ComponentLoadZoneOnOnAmountChanged;
+            }
+            else
+                throw new NotImplementedException("[PutResourceToConveyorInspector]: Can't get loadzone from conveyor");
+        }
+
+        private void ComponentLoadZoneOnOnAmountChanged(int amount)
+        {
+            if (amount > 0 && loadZone.ResourceType == ResourceType.WOOD)
+            {
+                // Debug.Log($"[PutResourceToConveyorInspector]: ComponentLoadZoneOnOnAmountChanged() amount={amount}" +
+                //           $" ResourceType is WOOD");
                 this.CompleteQuest();
             }
         }
 
         private void CompleteQuest()
         {
-            this.sellInteractor.OnResourcesSold -= this.OnResourcesSold;
+            this.loadZone.OnAmountChanged -= ComponentLoadZoneOnOnAmountChanged;
+            this.conveyorVisitInteractor.InputZone.OnEntered -= InputZoneOnOnEntered;
             this.callback?.Invoke();
         }
     }

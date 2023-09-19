@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace GameSystem
 {
@@ -131,9 +132,14 @@ namespace GameSystem
         {
             if (service is IGameServiceGroup group)
             {
+                //Debug.Log($"[IGameServiceGroup] [{group}]");
                 var services = group.GetServices();
                 foreach (var innerService in services)
                 {
+                    // if (group.GetType().Name == "PlayerMechanicsModule")
+                    // {
+                    //     Debug.LogWarning($"[{innerService}]");
+                    // }
                     this.AddRecursively(innerService);
                 }
             }

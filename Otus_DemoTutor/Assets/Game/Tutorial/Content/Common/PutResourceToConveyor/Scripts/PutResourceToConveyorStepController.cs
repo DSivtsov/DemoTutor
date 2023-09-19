@@ -32,9 +32,8 @@ namespace Game.Tutorial
             this.pointerManager = context.GetService<PointerManager>();
             this.navigationManager = context.GetService<NavigationManager>();
             this.screenTransform = context.GetService<ScreenTransform>();
-            
-            var sellInteractor = context.GetService<VendorInteractor>();
-            this.actionInspector.Construct(sellInteractor, this.config);
+            ConveyorVisitInteractor conveyorVisitInteractor = context.GetService<ConveyorVisitInteractor>();
+            this.actionInspector.Construct(conveyorVisitInteractor, this.config);
             this.actionPanel.Construct(this.config);
             
             base.ConstructGame(context);
@@ -42,10 +41,8 @@ namespace Game.Tutorial
 
         protected override void OnStart()
         {
-            //TutorialAnalytics.LogEventAndCache("tutorial_step_3__cell_resource_started");
             base.OnStart();
             this.actionInspector.Inspect(this.NotifyAboutCompleteAndMoveNext);
-
             var targetPosition = this.pointerTransform.position;
             this.pointerManager.ShowPointer(targetPosition, this.pointerTransform.rotation);
             this.navigationManager.StartLookAt(targetPosition);
@@ -54,7 +51,6 @@ namespace Game.Tutorial
 
         protected override void OnStop()
         {
-            //TutorialAnalytics.LogEventAndCache("tutorial_step_3__cell_resource_completed");
             base.OnStop();
             this.navigationManager.Stop();
             this.pointerManager.HidePointer();
