@@ -38,7 +38,6 @@ MonoBehaviour:
     - GOAP
     - Assembly-CSharp
     - BehaviourTree
-    - GameSystemLesson
     - Windows
     - Products
     - Cinemachine
@@ -74,17 +73,18 @@ MonoBehaviour:
     - Sirenix.OdinInspector.CompatibilityLayer
     - UniTask.TextMeshPro
     - Input
+    - GameSystemLesson
     - PPv2URPConverters
-    - LessonTDD
     - GOAP (EditMode)
     - Sirenix.OdinInspector.CompatibilityLayer.Editor
     - UniTask.Editor
     - NavMeshComponentsEditor
-    - LessonCraftingTest
     - Sirenix.OdinInspector.Modules.UnityMathematics
     - InventorySystem (EditMode)
     - SimpleFolderIcon
     - Pathfinding (EditMode)
+    - LessonCraftingTest
+    - LessonTDD
     showAdvancedSettings: 1
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1
