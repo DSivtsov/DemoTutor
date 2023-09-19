@@ -4,20 +4,29 @@ using UnityEngine;
 
 namespace Game.Tutorial
 {
+    public enum ExchangeType
+    {
+        Put = 0,
+        Get = 1,
+    }
+    
     [CreateAssetMenu(
-        fileName = "Tutorial Step «Put Resource To Conveyor»",
-        menuName = "Tutorial/New Tutorial Step «Put Resource To Conveyor»"
+        fileName = "Tutorial Step «ExchangeResourceConveyor»",
+        menuName = "Tutorial/New Tutorial Step «Exchange Resource with Conveyor»"
     )]
-    public sealed class PutResourceToConveyorConfig : ScriptableObject, IPanelConfig
+    public sealed class ExchangeResourceConveyorConfig : ScriptableObject, IPanelConfig
     {
         [Header("Quest")]
+        [SerializeField]
+        public ExchangeType exchangeType = ExchangeType.Put;
+        
         [SerializeField]
         public ResourceType targetResourceType = ResourceType.WOOD;
     
         [Header("Meta")]
         [TranslationKey]
         [SerializeField]
-        public string title = "Put Resource To Conveyor";
+        public string title = "Exchange Resource with Conveyor";
 
         [SerializeField]
         public Sprite icon;

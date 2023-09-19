@@ -7,8 +7,8 @@ using UnityEngine;
 
 namespace Game.Tutorial
 {
-    [AddComponentMenu("Tutorial/Step «Put Resource To Conveyor»")]
-    public sealed class PutResourceToConveyorStepController : TutorialStepController
+    [AddComponentMenu("Tutorial/Step «Exchange Resource with Conveyor»")]
+    public sealed class ExchangeResourceConveyorStepController : TutorialStepController
     {
         private PointerManager pointerManager;
 
@@ -16,10 +16,10 @@ namespace Game.Tutorial
 
         private ScreenTransform screenTransform;
     
-        private readonly PutResourceToConveyorInspector actionInspector = new();
+        private readonly ExchangeResourceConveyorInspector actionInspector = new();
 
         [SerializeField]
-        private PutResourceToConveyorConfig config;
+        private ExchangeResourceConveyorConfig config;
 
         [SerializeField]
         private TutorialStepPanelShower actionPanel = new();
@@ -33,7 +33,8 @@ namespace Game.Tutorial
             this.navigationManager = context.GetService<NavigationManager>();
             this.screenTransform = context.GetService<ScreenTransform>();
             ConveyorVisitInteractor conveyorVisitInteractor = context.GetService<ConveyorVisitInteractor>();
-            this.actionInspector.Construct(conveyorVisitInteractor, this.config);
+            ResourceStorage resourceStorage = context.GetService<ResourceStorage>();
+            this.actionInspector.Construct(conveyorVisitInteractor, this.config, resourceStorage);
             this.actionPanel.Construct(this.config);
             
             base.ConstructGame(context);

@@ -174,7 +174,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3148927194187487716}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4911381372348552171
 MonoBehaviour:
@@ -356,6 +356,7 @@ MonoBehaviour:
   - {fileID: 4693716560327999602}
   - {fileID: 857856321720598767}
   - {fileID: 7030719114740448286}
+  - {fileID: 5050523326245896906}
   - {fileID: 4911381372348552171}
   - {fileID: 2426757044515287115}
   - {fileID: 7165680554008715135}
@@ -421,6 +422,57 @@ Transform:
   m_Father: {fileID: 2435874646546107567}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3972358643808572183
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2924137490115504191}
+  - component: {fileID: 5050523326245896906}
+  m_Layer: 0
+  m_Name: 4.GetResourceFromConveyor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2924137490115504191
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3972358643808572183}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3148927194187487716}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5050523326245896906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3972358643808572183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29a0db683ab8438e832e5c2238ca0015, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  step: 6
+  config: {fileID: 11400000, guid: ea34fb0ff1cfa264c838a6f519dd5fe2, type: 2}
+  actionPanel:
+    showDelay: 0.5
+    viewPrefab: {fileID: 7004754039173447821, guid: ec0a3f3dd5a8e46c68f98d15568a6457,
+      type: 3}
+  pointerTransform: {fileID: 1149590253714969901}
 --- !u!1 &4257378992284525787
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,7 +536,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3148927194187487716}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8191445035365891073
 MonoBehaviour:
@@ -569,7 +621,7 @@ GameObject:
   - component: {fileID: 3505543212947105213}
   - component: {fileID: 7030719114740448286}
   m_Layer: 0
-  m_Name: 3.PutReourcesToConveyor
+  m_Name: 3.PutResourcesToConveyor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -639,7 +691,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3148927194187487716}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2426757044515287115
 MonoBehaviour:
@@ -676,7 +728,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1149590253714969901}
   m_Layer: 0
-  m_Name: GetPlanksFromConveyor
+  m_Name: GetLumbertFromConveyor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -690,7 +742,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5951010977025786776}
   m_LocalRotation: {x: -0.23941702, y: 0.018044021, z: -0.0045032892, w: -0.97073877}
-  m_LocalPosition: {x: 30.41, y: 0, z: 7.145}
+  m_LocalPosition: {x: 30.41, y: 1.5, z: 7.145}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -758,7 +810,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3148927194187487716}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7165680554008715135
 MonoBehaviour:
@@ -856,6 +908,7 @@ Transform:
   - {fileID: 8651994101469306502}
   - {fileID: 4449728116692917961}
   - {fileID: 3505543212947105213}
+  - {fileID: 2924137490115504191}
   - {fileID: 3631100122495761853}
   - {fileID: 546143346056862684}
   - {fileID: 5861923413027745657}
