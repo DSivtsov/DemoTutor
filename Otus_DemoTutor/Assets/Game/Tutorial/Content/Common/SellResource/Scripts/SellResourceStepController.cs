@@ -1,5 +1,4 @@
 using Game.Gameplay.Player;
-using Game.Tutorial.App;
 using Game.Tutorial.Gameplay;
 using Game.Tutorial.UI;
 using GameSystem;

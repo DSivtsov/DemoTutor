@@ -302,10 +302,10 @@ MonoBehaviour:
         - language: 30
           value: "\u0417\u0410\u0411\u0415\u0420\u0418\u0422\u0415 \u0414\u041E\u0421\u041A\u0418
             \u0421 \u041A\u041E\u041D\u0412\u0415\u0419\u0415\u0420\u0410"
-      - key: SELL_PLANKS
+      - key: SELL_LUMBER
         translations:
         - language: 10
-          value: SELL PLANKS
+          value: SELL LUMBER
         - language: 30
           value: "\u041F\u0420\u041E\u0414\u0410\u0419\u0422\u0415 \u0414\u041E\u0421\u041A\u0418"
       - key: GET_REWARDS
