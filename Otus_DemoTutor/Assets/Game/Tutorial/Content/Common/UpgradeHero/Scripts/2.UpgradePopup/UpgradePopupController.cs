@@ -1,6 +1,7 @@
 using Game.Meta;
 using Game.Tutorial.Gameplay;
 using GameSystem;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,11 +10,6 @@ namespace Game.Tutorial
     [AddComponentMenu("Tutorial/Step «Upgrade Popup»")]
     public sealed class UpgradePopupController : TutorialStepController
     {
-        private readonly UpgradePopupInspector questInspector = new();
-
-        [SerializeField]
-        private UpgradeHeroConfig config;
-
         [SerializeField]
         private GameObject questCursor;
 
@@ -27,6 +23,13 @@ namespace Game.Tutorial
         [SerializeField]
         private GameObject closeCursor;
 
+        private readonly UpgradePopupInspector questInspector = new();
+        
+        [SerializeField,ReadOnly]
+        private UpgradeHeroConfig config;
+
+        public UpgradeHeroConfig Config => config;
+
         private void Awake()
         {
             this.questCursor.SetActive(false);
@@ -34,10 +37,14 @@ namespace Game.Tutorial
             this.closeButton.interactable = false;
         }
 
+        public void InitConfig(UpgradeHeroConfig upgradeConfig)
+        {
+            this.config = upgradeConfig;
+        }
+
         public override void ConstructGame(GameContext context)
         {
             var upgradesManager = context.GetService<UpgradesManager>();
-            Debug.Log($"[UpgradePopupController]:  use separated config {this.config.name}");
             this.questInspector.Construct(upgradesManager, this.config);
 
             base.ConstructGame(context);
@@ -70,7 +77,7 @@ namespace Game.Tutorial
             //Завершаем шаг туториала:
             this.NotifyAboutComplete();
         }
-        
+
         private void OnCloseClicked()
         {
             this.closeButton.onClick.RemoveListener(this.OnCloseClicked);

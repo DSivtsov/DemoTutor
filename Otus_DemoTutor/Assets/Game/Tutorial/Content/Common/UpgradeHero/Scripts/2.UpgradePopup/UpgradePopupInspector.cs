@@ -24,7 +24,6 @@ namespace Game.Tutorial
         {
             this.callback = callback;
             this.targetUpgrade = this.upgradesManager.GetUpgrade(this.config.upgradeConfig.id);
-            Debug.Log($"this.config.upgradeConfig.id[{this.config.upgradeConfig.id}] this.config.targetLevel[{this.config.targetLevel}]");
             this.targetUpgrade.OnLevelUp += this.OnLevelUp;
         }
 

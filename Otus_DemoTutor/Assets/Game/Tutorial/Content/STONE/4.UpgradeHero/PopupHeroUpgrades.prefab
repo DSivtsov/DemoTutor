@@ -9572,7 +9572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82da16c341df4037a576377180ee8227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  config: {fileID: 11400000, guid: 69ff9f175d99e4ea78e74bed70869a1c, type: 2}
+  popupController: {fileID: 1663601100}
   targetView: {fileID: 497723767167301432}
   otherViews:
   - {fileID: 497723769006609601}

@@ -320,11 +320,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   step: 3
-  config: {fileID: 11400000, guid: d5b19be1d7b0f4c4d8194ebc5775621e, type: 2}
   questCursor: {fileID: 1230194219}
   fading: {fileID: 1379657010}
   closeButton: {fileID: 123459491211586212}
   closeCursor: {fileID: 778978325}
+  config: {fileID: 0}
 --- !u!1001 &8846706367180232034
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9572,7 +9572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82da16c341df4037a576377180ee8227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  config: {fileID: 11400000, guid: d5b19be1d7b0f4c4d8194ebc5775621e, type: 2}
+  popupController: {fileID: 1663601100}
   targetView: {fileID: 497723767167301432}
   otherViews:
   - {fileID: 497723769006609601}

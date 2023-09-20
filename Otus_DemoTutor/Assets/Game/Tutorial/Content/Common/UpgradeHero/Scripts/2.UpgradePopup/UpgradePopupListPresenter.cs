@@ -11,7 +11,7 @@ namespace Game.Tutorial
     public sealed class UpgradePopupListPresenter : MonoBehaviour, IGameConstructElement
     {
         [SerializeField]
-        private UpgradeHeroConfig config;
+        private UpgradePopupController popupController;
 
         [SerializeField]
         private UpgradeView targetView;
@@ -19,6 +19,8 @@ namespace Game.Tutorial
         [SerializeField]
         private UpgradeView[] otherViews;
 
+        private UpgradeHeroConfig config;
+        
         private UpgradesManager upgradesManager;
 
         private MoneyStorage moneyStorage;
@@ -34,6 +36,8 @@ namespace Game.Tutorial
         {
             this.upgradesManager = context.GetService<UpgradesManager>();
             this.moneyStorage = context.GetService<MoneyStorage>();
+
+            this.config = this.popupController.Config;
         }
 
         public void Show()
@@ -50,7 +54,6 @@ namespace Game.Tutorial
 
         private void InitUpgrades()
         {
-            Debug.LogWarning($"[UpgradeListPresenter]:  use separated config {this.config.name}");
             var targetId = this.config.upgradeConfig.id;
             var targetUprade = this.upgradesManager.GetUpgrade(targetId);
             this.CreatePresenter(targetUprade, this.targetView);

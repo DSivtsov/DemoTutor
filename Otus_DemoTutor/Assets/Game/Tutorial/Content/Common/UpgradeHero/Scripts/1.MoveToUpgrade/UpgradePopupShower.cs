@@ -14,8 +14,11 @@ namespace Game.Tutorial
         [SerializeField]
         private AssetReference popupPrefab;
 
-        public void Construct(PopupManager popupManager)
+        private UpgradeHeroConfig upgradeConfig;
+
+        public void Construct(PopupManager popupManager, UpgradeHeroConfig upgradeConfig)
         {
+            this.upgradeConfig = upgradeConfig;
             this.popupManager = popupManager;
         }
         
@@ -23,8 +26,13 @@ namespace Game.Tutorial
         {
             var handle = this.popupPrefab.LoadAssetAsync<GameObject>();
             await handle.Task;
-            var popup = handle.Result.GetComponent<MonoWindow>();
-
+            GameObject handleResult = handle.Result;
+            
+            var popupController = handleResult.GetComponentInChildren<UpgradePopupController>();
+            //field config SerializedField,ReadOnly
+            popupController.InitConfig(this.upgradeConfig);
+            
+            var popup = handleResult.GetComponent<MonoWindow>();
             this.popupManager.Show(popup, args: null);   
         }
     }

@@ -43,7 +43,7 @@ namespace Game.Tutorial
             this.actionTutorialPanel.Construct(this.config);
 
             var popupManager = context.GetService<PopupManager>();
-            this.popupShower.Construct(popupManager);
+            this.popupShower.Construct(popupManager, config);
 
             base.ConstructGame(context);
         }
