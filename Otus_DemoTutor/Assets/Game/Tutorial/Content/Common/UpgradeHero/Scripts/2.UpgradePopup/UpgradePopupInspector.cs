@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Game.Tutorial
 {
-    public sealed class UpgradeInspector
+    public sealed class UpgradePopupInspector
     {
         private UpgradeHeroConfig config;
         

@@ -6,8 +6,8 @@ using UnityEngine;
 
 namespace Game.Tutorial
 {
-    [AddComponentMenu("Tutorial/Step «Move To Upgrade»")]
-    public sealed class MoveToUpgradeStepController : TutorialStepController, IGameInitElement
+    [AddComponentMenu("Tutorial/Step «Upgrade»")]
+    public sealed class UpgradeStepController : TutorialStepController, IGameInitElement
     {
         private PointerManager pointerManager;
 

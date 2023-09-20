@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Game.Tutorial
 {
-    public sealed class UpgradeListPresenter : MonoBehaviour, IGameConstructElement
+    public sealed class UpgradePopupListPresenter : MonoBehaviour, IGameConstructElement
     {
         [SerializeField]
         private UpgradeHeroConfig config;
@@ -25,7 +25,7 @@ namespace Game.Tutorial
 
         private readonly List<UpgradePresenter> presenters;
 
-        public UpgradeListPresenter()
+        public UpgradePopupListPresenter()
         {
             this.presenters = new List<UpgradePresenter>();
         }
