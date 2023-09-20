@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDebug: 1
   isCompleted: 1
-  currentStep: 3
+  currentStep: 7

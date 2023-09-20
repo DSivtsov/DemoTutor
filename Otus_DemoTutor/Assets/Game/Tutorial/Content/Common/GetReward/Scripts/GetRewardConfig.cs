@@ -6,20 +6,19 @@ using UnityEngine;
 namespace Game.Tutorial
 {
     [CreateAssetMenu(
-        fileName = "Config «Upgrade Hero»",
-        menuName = "Tutorial/Config «Upgrade Hero»"
+        fileName = "Config «Get Reward»",
+        menuName = "Tutorial/Config «Get Reward»"
     )]
-    public sealed class UpgradeHeroConfig : ScriptableObject, IPanelConfig
+    public sealed class GetRewardConfig : ScriptableObject, IPanelConfig
     {
         [Header("Quest")]
         [SerializeField]
+        public MissionConfig missionConfig;
+        
         public UpgradeConfig upgradeConfig;
         
         [SerializeField]
-        public WorldPlaceType worldPlaceType =  WorldPlaceType.BLACKSMITH;
-
-        // [SerializeField]
-        // public PopupName requiredPopupName = PopupName.HERO_UPGRADES;
+        public WorldPlaceType worldPlaceType =  WorldPlaceType.TAVERN;
         
         [SerializeField]
         public int targetLevel = 3;
@@ -27,7 +26,7 @@ namespace Game.Tutorial
         [Header("Meta")]
         [TranslationKey]
         [SerializeField]
-        public string title = "UPGRADE DAMAGE";
+        public string title = "GET REWARD";
 
         [SerializeField]
         public Sprite icon;

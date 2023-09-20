@@ -9,6 +9,6 @@ namespace Game.Tutorial
         DESTROY_ENEMY = 4,
         PUT_TO_CONVEYOR = 5,
         GET_FROM_CONVEYOR = 6,
-        GET_REWARDS = 7,
+        GET_REWARD = 7,
     }
 }

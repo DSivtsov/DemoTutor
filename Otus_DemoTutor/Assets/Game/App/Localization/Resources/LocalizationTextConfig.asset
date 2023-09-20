@@ -308,10 +308,10 @@ MonoBehaviour:
           value: SELL LUMBER
         - language: 30
           value: "\u041F\u0420\u041E\u0414\u0410\u0419\u0422\u0415 \u0414\u041E\u0421\u041A\u0418"
-      - key: GET_REWARDS
+      - key: GET_REWARD
         translations:
         - language: 10
-          value: GET REWARDS
+          value: GET REWARD
         - language: 30
           value: "\u041F\u041E\u041B\u0423\u0427\u0418\u0422\u0415 \u041D\u0410\u0413\u0420\u0410\u0414\u0423"
       - key: EPILOGUE_WOOD

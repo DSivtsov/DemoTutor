@@ -1,0 +1,129 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Game.Gameplay.Player;
+using Game.Meta;
+using GameSystem;
+using UnityEngine;
+
+namespace Game.Tutorial
+{
+    public sealed class GetRewardPopupListPresenter : MonoBehaviour, IGameConstructElement
+    {
+        [SerializeField]
+        private GetRewardPopupController popupController;
+
+        // [SerializeField]
+        // private UpgradeView targetView;
+        //
+        // [SerializeField]
+        // private UpgradeView[] otherViews;
+
+        private GetRewardConfig config;
+        
+        // private UpgradesManager upgradesManager;
+        //
+        // private MoneyStorage moneyStorage;
+        //
+        // private readonly List<UpgradePresenter> presenters;
+        
+        /*
+         * 
+         */
+        [Serializable]
+        private sealed class MissionItem
+        {
+            [SerializeField]
+            public MissionDifficulty difficulty;
+
+            [SerializeField]
+            public MissionPresenter presenter;
+        }
+        
+        [SerializeField]
+        private MissionItem[] missionItems;
+
+        private MissionsManager missionsManager;
+
+        
+        
+        
+        /*
+         * 
+         */
+        void IGameConstructElement.ConstructGame(GameContext context)
+        {
+            Debug.Log($"[GetRewardPopupListPresenter]: IGameConstructElement.ConstructGame(GameContext context)");
+            
+            // this.upgradesManager = context.GetService<UpgradesManager>();
+            // this.moneyStorage = context.GetService<MoneyStorage>();
+
+            this.config = this.popupController.Config;
+        }
+
+        // public GetRewardPopupListPresenter()
+        // {
+        //     this.presenters = new List<UpgradePresenter>();
+        // }
+
+        public void Show()
+        {
+            Debug.Log($"[GetRewardPopupListPresenter]: Show()");
+            
+            // this.InitUpgrades();
+            // this.ShowUpgrades();
+        }
+
+        public void Hide()
+        {
+            // this.HideUpgrades();
+            // this.presenters.Clear();
+        }
+
+        private void InitUpgrades()
+        {
+            // var targetId = this.config.upgradeConfig.id;
+            // var targetUprade = this.upgradesManager.GetUpgrade(targetId);
+            // this.CreatePresenter(targetUprade, this.targetView);
+            //
+            // var otherUpgrades = this.upgradesManager
+            //     .GetAllUpgrades()
+            //     .Where(it => it.Id != targetId)
+            //     .ToArray();
+            //
+            // var otherCount = Math.Min(this.otherViews.Length, otherUpgrades.Length);
+            //
+            // for (var i = 0 ; i < otherCount; i++)
+            // {
+            //     var upgrade = otherUpgrades[i];
+            //     var view = this.otherViews[i];
+            //     this.CreatePresenter(upgrade, view);
+            // }
+        }
+
+        // private void CreatePresenter(Upgrade targetUprade, UpgradeView view)
+        // {
+        //     var targetPresenter = new UpgradePresenter(targetUprade, view);
+        //     targetPresenter.Construct(this.upgradesManager, this.moneyStorage);
+        //     this.presenters.Add(targetPresenter);
+        // }
+        //
+        // private void ShowUpgrades()
+        // {
+        //     for (int i = 0, count = this.presenters.Count; i < count; i++)
+        //     {
+        //         var presenter = this.presenters[i];
+        //         presenter.Start();
+        //     }
+        // }
+        //
+        // private void HideUpgrades()
+        // {
+        //     for (int i = 0, count = this.presenters.Count; i < count; i++)
+        //     {
+        //         var presenter = this.presenters[i];
+        //         presenter.Stop();
+        //     }
+        // }
+    }
+}

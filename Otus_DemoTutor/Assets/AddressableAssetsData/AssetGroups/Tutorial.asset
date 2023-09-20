@@ -61,6 +61,10 @@ MonoBehaviour:
     m_Address: CommonPopupHeroUpgrades
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: ec41003f7c9c9fe44ae1fd61a6f5c02e
+    m_Address: CommonPopupGetReward
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: b9a595f24937c4006b7d9469b06533f1, type: 2}
   m_SchemaSet:
