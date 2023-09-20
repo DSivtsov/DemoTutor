@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: DebugTutorialConfig
   m_EditorClassIdentifier: 
   isDebug: 1
-  isCompleted: 0
+  isCompleted: 1
   currentStep: 3

@@ -29,12 +29,8 @@ MonoBehaviour:
     m_Address: CommonPopupWelcome
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 7d4d3e75ef3a84db3a465d10874d8329
-    m_Address: StoneUpgradeHero4
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 64b782892352d45a1b8bba500bb0385e
-    m_Address: StoneKillEnemy5
+    m_Address: CommonEnemy_GoblinWarriorMale
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 9a39ce8ef6db649089bae8e5570d8177
@@ -62,11 +58,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 6f4ef5727a95b0142b49eeebd7a2f602
-    m_Address: WoodPopupHeroUpgrades
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 915c93f4aaa1d1c44abc8be64dacb084
-    m_Address: WoodEnemy
+    m_Address: CommonPopupHeroUpgrades
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

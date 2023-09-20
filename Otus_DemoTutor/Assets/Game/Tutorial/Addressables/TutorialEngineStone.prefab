@@ -139,10 +139,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   step: 1
   config: {fileID: 11400000, guid: 875987ea740354128939e4961d869059, type: 2}
-  panelShower:
-    showDelay: 0.5
-    viewPrefab: {fileID: 7004754039173447821, guid: ec0a3f3dd5a8e46c68f98d15568a6457,
-      type: 3}
+  tutorialStepPanelShower:
+    showDelay: 1
+    viewPrefab: {fileID: 0}
   pointerTransform: {fileID: 2109574175}
 --- !u!1 &1284995439724765761
 GameObject:
@@ -541,14 +540,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   step: 3
   config: {fileID: 11400000, guid: 69ff9f175d99e4ea78e74bed70869a1c, type: 2}
-  actionPanel:
-    showDelay: 0.5
-    viewPrefab: {fileID: 7004754039173447821, guid: ec0a3f3dd5a8e46c68f98d15568a6457,
-      type: 3}
+  actionTutorialPanel:
+    showDelay: 1
+    viewPrefab: {fileID: 0}
   pointerTransform: {fileID: 9212810819539266258}
   popupShower:
     popupPrefab:
-      m_AssetGUID: 7d4d3e75ef3a84db3a465d10874d8329
+      m_AssetGUID: 6f4ef5727a95b0142b49eeebd7a2f602
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0

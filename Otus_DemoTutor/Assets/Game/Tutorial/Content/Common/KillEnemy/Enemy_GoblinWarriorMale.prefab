@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 5810975871391316492}
   - component: {fileID: 5969754434152532082}
   m_Layer: 0
-  m_Name: EnemyWood
+  m_Name: Enemy_GoblinWarriorMale
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
