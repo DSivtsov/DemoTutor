@@ -1,5 +1,4 @@
 using Game.Meta;
-using Game.Tutorial.Gameplay;
 using GameSystem;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -7,58 +6,58 @@ using UnityEngine.UI;
 
 namespace Game.Tutorial
 {
-    [AddComponentMenu("Tutorial/Step «GetReward Popup»")]
-    public sealed class GetRewardPopupController : TutorialStepController
+    [RequireComponent(typeof(GetRewardsPopupViewChanger))]
+    public sealed class GetRewardPopupController : MonoBehaviour, IGameConstructElement
     {
-        [SerializeField]
-        private GameObject questCursor;
-
-        [SerializeField]
-        private Transform fading;
-
+        [SerializeField] private GetRewardPopupListPresenter getRewardPopupListPresenter;
+        [SerializeField] private Transform fading;
         [Header("Close")]
-        [SerializeField]
-        private Button closeButton;
-
-        [SerializeField]
-        private GameObject closeCursor;
+        [SerializeField] private Button closeButton;
+        [SerializeField] private GameObject closeCursor;
+        [Header("Construct Parameters")]
+        [SerializeField,ReadOnly] private GetRewardStepController getRewardStepController;
+        [ShowInInspector,ReadOnly] private GameObject questCursor;
 
         private readonly GetRewardPopupInspector questInspector = new();
-        
-        [SerializeField,ReadOnly]
-        private GetRewardConfig config;
+        private MissionDifficulty targetMissionDifficulty;
 
-        public GetRewardConfig Config => config;
-
-        private void Awake()
+        public void LinkPopupPrefabWithStepController(GetRewardStepController getRewardStepController)
         {
-            this.questCursor.SetActive(false);
+            this.getRewardStepController = getRewardStepController;
+        }
+
+        void IGameConstructElement.ConstructGame(GameContext context)
+        {
+            this.targetMissionDifficulty = this.getRewardStepController.Config.targetMission.Difficulty;
+            
+            var missionsManager = context.GetService<MissionsManager>();
+            this.questInspector.Construct(missionsManager, targetMissionDifficulty);
+
+            GetRewardsPopupViewChanger popupViewChanger = this.GetComponent<GetRewardsPopupViewChanger>();
+            popupViewChanger.InitMissionPopupViewValues(targetMissionDifficulty);
+            
+            this.questCursor = popupViewChanger.GetCurrentMissionCursor();
+            
+            this.getRewardPopupListPresenter.Construct(context, targetMissionDifficulty,
+                popupViewChanger.GetCurrentMissionFakePresenter());
+
+            this.InitView();
+        }
+
+        private void InitView()
+        {
             this.closeCursor.SetActive(false);
             this.closeButton.interactable = false;
-        }
-
-        public void InitConfig(GetRewardConfig getRewardConfigConfig)
-        {
-            this.config = getRewardConfigConfig;
-        }
-
-        public override void ConstructGame(GameContext context)
-        {
-            Debug.Log($"[GetRewardPopupController]: ConstructGame(GameContext context)");
-            // var upgradesManager = context.GetService<UpgradesManager>();
-            // this.questInspector.Construct(upgradesManager, this.config);
-
-            base.ConstructGame(context);
+            this.questCursor.SetActive(false);
         }
 
         public void Show()
         {
-            Debug.Log($"[GetRewardPopupController]: Show()");
-            // //Ждем выполнение квеста прокачки:
-            // this.questInspector.Inspect(this.OnQuestFinished);
-            //
-            // //Включаем курсор на прокачке:
-            // this.questCursor.SetActive(true);
+            //Ждем выполнение квеста прокачки:
+            this.questInspector.Inspect(this.OnQuestFinished);
+            
+            //Включаем курсор на GetReward:
+            this.questCursor.SetActive(true);
         }
 
         private void OnQuestFinished()
@@ -69,15 +68,17 @@ namespace Game.Tutorial
             //Включаем курсор на кнопке закрыть:
             this.closeCursor.SetActive(true);
 
-            //Делаем затемнение на прокачке:
-            this.fading.SetAsLastSibling();
+            // //Делаем затемнение на прокачке:
+            // this.fading.SetAsLastSibling();
+            
+            this.fading.gameObject.SetActive(true);
 
             //Активируем кнопку закрыть:
             this.closeButton.interactable = true;
             this.closeButton.onClick.AddListener(this.OnCloseClicked);
             
             //Завершаем шаг туториала:
-            this.NotifyAboutComplete();
+            this.getRewardStepController.FinishStep();
         }
 
         private void OnCloseClicked()
@@ -88,7 +89,7 @@ namespace Game.Tutorial
             this.closeCursor.SetActive(false);
 
             //Переходим к следующему шагу туториала:
-            this.NotifyAboutMoveNext();
+            this.getRewardStepController.MoveNextStep();
         }
     }
 }

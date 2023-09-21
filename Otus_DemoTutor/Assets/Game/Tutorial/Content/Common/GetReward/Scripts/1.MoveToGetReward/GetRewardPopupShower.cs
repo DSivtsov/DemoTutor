@@ -14,11 +14,11 @@ namespace Game.Tutorial
         [SerializeField]
         private AssetReference popupPrefab;
 
-        private GetRewardConfig getRewardConfig;
+        private GetRewardStepController getRewardStepController;
 
-        public void Construct(PopupManager popupManager, GetRewardConfig getRewardConfig)
+        public void Construct(PopupManager popupManager, GetRewardStepController getRewardStepController)
         {
-            this.getRewardConfig = getRewardConfig;
+            this.getRewardStepController = getRewardStepController;
             this.popupManager = popupManager;
         }
         
@@ -29,8 +29,8 @@ namespace Game.Tutorial
             GameObject handleResult = handle.Result;
             
             var popupController = handleResult.GetComponentInChildren<GetRewardPopupController>();
-            //field config SerializedField,ReadOnly
-            popupController.InitConfig(this.getRewardConfig);
+            //set values in SerializedField,ReadOnly fields
+            popupController.LinkPopupPrefabWithStepController(this.getRewardStepController);
             
             var popup = handleResult.GetComponent<MonoWindow>();
             this.popupManager.Show(popup, args: null);   

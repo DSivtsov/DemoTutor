@@ -6,37 +6,32 @@ namespace Game.Tutorial
 {
     public sealed class GetRewardPopupInspector
     {
-        private GetRewardPopupInspector config;
-        
-        private UpgradesManager upgradesManager;
-
-        private Upgrade targetUpgrade;
+        private MissionsManager missionsManager;
         
         private Action callback;
-        
-        public void Construct(UpgradesManager upgradesManager, GetRewardPopupInspector targetConfig)
+        private MissionDifficulty targetMissionDifficulty;
+
+        public void Construct(MissionsManager missionsManager, MissionDifficulty targetMissionDifficulty)
         {
-            this.upgradesManager = upgradesManager;
-            this.config = targetConfig;
+            this.missionsManager = missionsManager;
+            this.targetMissionDifficulty = targetMissionDifficulty;
         }
         
         public void Inspect(Action callback)
         {
-            // this.callback = callback;
-            // this.targetUpgrade = this.upgradesManager.GetUpgrade(this.config.upgradeConfig.id);
-            // this.targetUpgrade.OnLevelUp += this.OnLevelUp;
+            this.callback = callback;
+            this.missionsManager.OnMissionChanged += MissionsManagerOnOnMissionChanged;
         }
 
-        private void OnLevelUp(int nextLevel)
+        private void MissionsManagerOnOnMissionChanged(Mission mission)
         {
-            // if (nextLevel < this.config.targetLevel)
-            // {
-            //     return;
-            // }
-            //
-            // this.targetUpgrade.OnLevelUp -= this.OnLevelUp;
-            // this.targetUpgrade = null;
-            // this.callback?.Invoke();
+            if (mission.Difficulty != this.targetMissionDifficulty)
+            {
+                Debug.LogWarning($"mission.Difficulty[{mission.Difficulty }] != [{this.targetMissionDifficulty}]");
+            }
+            
+            this.missionsManager.OnMissionChanged -= MissionsManagerOnOnMissionChanged;
+            this.callback?.Invoke();
         }
     }
 }

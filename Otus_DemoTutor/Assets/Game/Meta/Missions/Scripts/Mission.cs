@@ -98,7 +98,7 @@ namespace Game.Meta
 
         #endregion
 
-        protected void TryComplete()
+        public void TryComplete()
         {
             if (this.NormalizedProgress >= 1.0f)
             {

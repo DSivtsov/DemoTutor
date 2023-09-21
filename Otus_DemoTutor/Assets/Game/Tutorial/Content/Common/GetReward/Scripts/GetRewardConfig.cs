@@ -13,15 +13,10 @@ namespace Game.Tutorial
     {
         [Header("Quest")]
         [SerializeField]
-        public MissionConfig missionConfig;
-        
-        public UpgradeConfig upgradeConfig;
+        public MissionConfig targetMission;
         
         [SerializeField]
         public WorldPlaceType worldPlaceType =  WorldPlaceType.TAVERN;
-        
-        [SerializeField]
-        public int targetLevel = 3;
     
         [Header("Meta")]
         [TranslationKey]

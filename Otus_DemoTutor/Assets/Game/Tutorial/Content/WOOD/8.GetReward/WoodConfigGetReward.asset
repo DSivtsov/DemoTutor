@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b9aacb84f92ede419189878e647d8ae, type: 3}
   m_Name: WoodConfigGetReward
   m_EditorClassIdentifier: 
-  missionConfig: {fileID: 11400000, guid: ddc589405142648bca2d6ccf09b35558, type: 2}
-  upgradeConfig: {fileID: 0}
+  targetMission: {fileID: 11400000, guid: bef5a83e58427491aadc1f438fcde753, type: 2}
   worldPlaceType: 1
-  targetLevel: 3
   title: Tutorial|GET_REWARD
   icon: {fileID: 21300000, guid: e6b939eadb09749b6ac22d22654ec972, type: 3}
