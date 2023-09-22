@@ -675,7 +675,7 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
-  config: {fileID: 11400000, guid: 6ef1b8bb6e1ff4e749611ca5bda876e6, type: 2}
+  config: {fileID: 11400000, guid: 080253434f3d620438b1ea3e5965d107, type: 2}
   showPopupDelay: 0.5
 --- !u!1 &4693716560327999603
 GameObject:

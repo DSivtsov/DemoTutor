@@ -33,7 +33,6 @@ namespace Game.Tutorial.Gameplay
 
         public virtual void StartGame()
         {
-            //Debug.Log($"[{this.name}]: [{this.step}] IsStepPassed[{this.tutorialManager.IsStepPassed(this.step)}] CurrentStep[{this.tutorialManager.CurrentStep}]");
             var stepFinished = this.tutorialManager.IsStepPassed(this.step);
             if (!stepFinished)
             {
