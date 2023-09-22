@@ -1,6 +1,5 @@
 using System;
 using Game.Meta;
-using UnityEngine;
 
 namespace Game.Tutorial
 {

@@ -29,7 +29,7 @@ namespace Game.Tutorial
             GameObject handleResult = handle.Result;
             
             var popupController = handleResult.GetComponentInChildren<GetRewardPopupController>();
-            //set values in SerializedField,ReadOnly fields
+            //set value in SerializedField,ReadOnly field
             popupController.LinkPopupPrefabWithStepController(this.getRewardStepController);
             
             var popup = handleResult.GetComponent<MonoWindow>();

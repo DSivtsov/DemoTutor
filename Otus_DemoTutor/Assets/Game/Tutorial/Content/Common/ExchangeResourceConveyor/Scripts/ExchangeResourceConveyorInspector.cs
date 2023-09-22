@@ -13,21 +13,15 @@ namespace Game.Tutorial
         private ConveyorVisitInteractor conveyorVisitInteractor;
 
         private Action callback;
-        //private IComponent_ConveyorZone zoneChanges;
         private ConveyorVisitInteractor.Zone zone;
-        private ResourceStorage resourceStorage;
 
         public void Construct(ConveyorVisitInteractor conveyorVisitInteractor, ExchangeResourceConveyorConfig config,
             ResourceStorage storage)
         {
             this.conveyorVisitInteractor = conveyorVisitInteractor;
             this.config = config;
-            this.resourceStorage = storage;
             
-            if (this.config.exchangeType == ExchangeType.Put)
-                zone = this.conveyorVisitInteractor.InputZone;
-            else
-                zone = this.conveyorVisitInteractor.OutputZone;
+            zone = this.config.exchangeType == ExchangeType.Put ? this.conveyorVisitInteractor.InputZone : this.conveyorVisitInteractor.OutputZone;
         }
 
         public void Inspect(Action callback)
@@ -41,7 +35,6 @@ namespace Game.Tutorial
             ResourceType resourceTypeZone = this.config.exchangeType == ExchangeType.Put
                 ? entity.Get<IComponent_LoadZone>().ResourceType : entity.Get<IComponent_UnloadZone>().ResourceType;
             
-            //Debug.Log($"targetResourceType={this.config.targetResourceType} resourceTypeZone={resourceTypeZone}");
             if (this.config.targetResourceType == resourceTypeZone)
             {
                 this.CompleteQuest();

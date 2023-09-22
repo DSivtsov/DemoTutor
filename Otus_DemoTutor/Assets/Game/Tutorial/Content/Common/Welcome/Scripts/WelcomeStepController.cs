@@ -1,4 +1,3 @@
-using Game.Tutorial.App;
 using Game.Tutorial.Gameplay;
 using Game.Tutorial.UI;
 using GameSystem;
@@ -28,12 +27,12 @@ namespace Game.Tutorial
         protected override void OnStart()
         {
             base.OnStart();
+            
             this.popupShower.ShowPopup(this.OnPopupClicked);
         }
 
         private void OnPopupClicked()
         {
-            base.OnStop();
             this.NotifyAboutCompleteAndMoveNext();
         }
     }

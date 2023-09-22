@@ -1,5 +1,4 @@
 using Game.Gameplay.Player;
-using Game.Tutorial.App;
 using Game.Tutorial.Gameplay;
 using Game.Tutorial.UI;
 using GameSystem;
@@ -43,6 +42,7 @@ namespace Game.Tutorial
         protected override void OnStart()
         {
             base.OnStart();
+            
             this.actionInspector.Inspect(this.NotifyAboutCompleteAndMoveNext);
             var targetPosition = this.pointerTransform.position;
             this.pointerManager.ShowPointer(targetPosition, this.pointerTransform.rotation);
@@ -53,6 +53,7 @@ namespace Game.Tutorial
         protected override void OnStop()
         {
             base.OnStop();
+            
             this.navigationManager.Stop();
             this.pointerManager.HidePointer();
             this.actionPanel.Hide();

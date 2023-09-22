@@ -33,6 +33,8 @@ namespace Game.Tutorial
 
         protected override async void OnStart()
         {
+            base.OnStart();
+            
             var enemy = await this.enemyManager.SpawnEnemy();
             this.actionInspector.Inspect(enemy, this.OnEnemyDestroyed);
             this.panelShower.Show(this.screenTransform.Value);

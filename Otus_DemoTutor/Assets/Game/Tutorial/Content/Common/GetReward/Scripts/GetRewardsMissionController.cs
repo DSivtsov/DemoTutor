@@ -1,6 +1,5 @@
 ﻿using System;
 using Game.Meta;
-using GameSystem;
 
 namespace Game.Tutorial
 {

@@ -17,9 +17,6 @@ namespace Game.Tutorial
         
         [SerializeField]
         public WorldPlaceType worldPlaceType =  WorldPlaceType.BLACKSMITH;
-
-        // [SerializeField]
-        // public PopupName requiredPopupName = PopupName.HERO_UPGRADES;
         
         [SerializeField]
         public int targetLevel = 3;

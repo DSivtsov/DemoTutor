@@ -59,7 +59,6 @@ namespace Game.Tutorial
 
         protected override void OnStart()
         {
-            //Was missed
             base.OnStart();
             
             //Подписываемся на подход к месту:
@@ -89,6 +88,8 @@ namespace Game.Tutorial
 
         protected override void OnStop()
         {
+            base.OnStop();
+            
             //Возвращаем базовый триггер:
             this.worldPlacePopupShower.SetEnable(true);
         }

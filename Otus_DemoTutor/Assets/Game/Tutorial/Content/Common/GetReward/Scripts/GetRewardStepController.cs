@@ -8,7 +8,7 @@ using UnityEngine;
 namespace Game.Tutorial
 {
     [AddComponentMenu("Tutorial/Step «GetReward»")]
-    public sealed class GetRewardStepController : TutorialStepController, IGameInitElement
+    public sealed class GetRewardStepController : TutorialStepController
     {
         [SerializeField] private GetRewardConfig config;
         [SerializeField] private TutorialStepPanelShower actionTutorialPanel;
@@ -45,31 +45,19 @@ namespace Game.Tutorial
             base.ConstructGame(context);
         }
 
-        void IGameInitElement.InitGame()
-        {
-            if (!this.IsStepFinished() && this.worldPlacePopupShower != null)
-            {
-                //Убираем базовый триггер
-                this.worldPlacePopupShower.SetEnable(false);
-            }
-        }
-
-        private void SetTargetMission()
-        {
-            this.missionController.Construct(missionManager, this.config.targetMission);
-        }
-
         protected override void OnStart()
         {
-            //Was missed
             base.OnStart();
             
-            SetTargetMission();
+            this.missionController.Construct(missionManager, this.config.targetMission);
+            
+            //Убираем базовый триггер
+            this.worldPlacePopupShower?.SetEnable(false);
             
             //Подписываемся на подход к месту:
             this.actionInspector.Inspect(this.OnPlaceVisited);
 
-            //Показываем указатель:
+            //Показываем указатель:w
             var targetPosition = this.pointerTransform.position;
             this.pointerManager.ShowPointer(targetPosition, this.pointerTransform.rotation);
             this.navigationManager.StartLookAt(targetPosition);
@@ -93,6 +81,8 @@ namespace Game.Tutorial
 
         protected override void OnStop()
         {
+            base.OnStop();
+            
             //Возвращаем базовый триггер:
             this.worldPlacePopupShower.SetEnable(true);
         }

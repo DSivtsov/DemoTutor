@@ -42,6 +42,7 @@ namespace Game.Tutorial
         protected override void OnStart()
         {
             base.OnStart();
+            
             this.actionInspector.Inspect(this.NotifyAboutCompleteAndMoveNext);
 
             var targetPosition = this.pointerTransform.position;
@@ -53,6 +54,7 @@ namespace Game.Tutorial
         protected override void OnStop()
         {
             base.OnStop();
+            
             this.navigationManager.Stop();
             this.pointerManager.HidePointer();
             this.actionPanel.Hide();
